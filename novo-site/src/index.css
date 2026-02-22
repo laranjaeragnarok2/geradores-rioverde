@@ -227,13 +227,27 @@ header {
 
 .hero-image-wrapper img {
   width: 100%;
-  max-width: 500px;
+  max-width: 650px;
   display: block;
   margin: 0 auto;
-  border-radius: var(--border-radius-lg);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 2;
+  animation: float-hero 5s ease-in-out infinite;
+  filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.4));
+}
+
+@keyframes float-hero {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* ==========================================================================

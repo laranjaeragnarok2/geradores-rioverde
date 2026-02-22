@@ -61,7 +61,7 @@ function App() {
             </div>
 
             <div className="hero-image-wrapper">
-              <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=1200&auto=format&fit=crop" alt="Gerador Industrial GRV" />
+              <img src="/gerador-hero.png" alt="Gerador Industrial GRV" />
             </div>
           </div>
         </section>
