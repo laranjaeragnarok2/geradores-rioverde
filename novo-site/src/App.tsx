@@ -39,8 +39,10 @@ function App() {
       </header>
 
       <main>
-        {/* HERO SECTION - Fluido Verde/Azul baseado na ref */}
         <section id="inicio" className="hero">
+          <div className="hero-bg">
+            <img src="/capa-grv.jpg" alt="Geradores Rio Verde - Banner" />
+          </div>
           <div className="hero-glow-1"></div>
           <div className="hero-glow-2"></div>
 
@@ -58,10 +60,6 @@ function App() {
                   <Play size={20} /> Ver Vídeo Institucional
                 </a>
               </div>
-            </div>
-
-            <div className="hero-image-wrapper">
-              <img src="/gerador-hero.png" alt="Gerador Industrial GRV" />
             </div>
           </div>
         </section>
@@ -109,7 +107,7 @@ function App() {
               {/* Card 3 */}
               <article className="service-card">
                 <div className="service-image">
-                  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=800&auto=format&fit=crop" alt="Locação Grupos Geradores" />
+                  <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=800&auto=format&fit=crop" alt="Locação Grupos Geradores" />
                 </div>
                 <div className="service-content">
                   <div className="service-icon-inline"><Zap size={24} /></div>

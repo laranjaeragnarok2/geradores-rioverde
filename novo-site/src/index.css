@@ -160,21 +160,52 @@ header {
   border-radius: 0 0 40px 40px;
   background: var(--gradient-dark);
   color: white;
-  padding: 160px 0 120px;
+  padding: 180px 0 140px;
   overflow: hidden;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
 }
 
-/* Efeito de fluido/energia de fundo inspirado na referência "Gostou do Conteudo" */
+/* Imagem de capa como fundo */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+}
+
+/* Overlay escuro para legibilidade */
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(11, 13, 54, 0.92) 0%, rgba(11, 13, 54, 0.7) 50%, rgba(11, 13, 54, 0.3) 100%);
+}
+
+/* Efeito de fluido/energia de fundo */
 .hero-glow-1 {
   position: absolute;
   top: -20%;
   right: -10%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(0, 166, 81, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(0, 166, 81, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
   border-radius: 50%;
   filter: blur(60px);
-  z-index: 0;
+  z-index: 1;
 }
 
 .hero-glow-2 {
@@ -183,23 +214,22 @@ header {
   left: -10%;
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, rgba(0, 199, 183, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(0, 199, 183, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
   border-radius: 50%;
   filter: blur(80px);
-  z-index: 0;
-}
-
-.hero .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 64px;
-  position: relative;
   z-index: 1;
 }
 
+.hero .container {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto 0 0;
+  padding-left: 80px;
+}
+
 .hero-content h1 {
-  font-size: 4rem;
+  font-size: 4.2rem;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 24px;
@@ -215,39 +245,11 @@ header {
 
 .hero-content p {
   font-size: 1.25rem;
-  opacity: 0.85;
+  opacity: 0.9;
   margin-bottom: 40px;
-  line-height: 1.5;
+  line-height: 1.6;
   font-weight: 300;
-}
-
-.hero-image-wrapper {
-  position: relative;
-}
-
-.hero-image-wrapper img {
-  width: 100%;
-  max-width: 650px;
-  display: block;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-  animation: float-hero 5s ease-in-out infinite;
-  filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.4));
-}
-
-@keyframes float-hero {
-  0% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
+  max-width: 550px;
 }
 
 /* ==========================================================================
@@ -528,20 +530,15 @@ header {
 /* RESPONSIVO */
 @media (max-width: 1024px) {
   .hero .container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-content {
-    margin-bottom: 40px;
+    padding-left: 40px;
   }
 
   .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
   }
 
   .hero-actions {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .services-grid {
