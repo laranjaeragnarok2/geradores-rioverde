@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup - Novo Design Geradores Rio Verde</title>
+    
+    <!-- Google Fonts: Inter para modernidade e legibilidade -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           1. VARIÁVEIS DE DESIGN E CORES (Design System)
+           ========================================================================== */
+        :root {
+            --brand-blue: #32348e; /* Cor original puxada do CSS atual */
+            --brand-blue-hover: #25266a;
+            --brand-green: #00a859; /* Cor do acento atual */
+            --brand-green-hover: #008746;
+            
+            --bg-body: #f8f9fa; /* Fundo levemente cinza para destacar cards brancos */
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            
+            --border-radius: 12px;
+            --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 40px rgba(50, 52, 142, 0.15); /* Sombra colorida da marca */
+            
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* ==========================================================================
+           2. RESET E BASE
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 100px 0; /* Espaçamento respirável, mas unificado */
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--brand-blue);
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================================================
+           3. SEÇÃO DE SERVIÇOS (CARDS GRID)
+           ========================================================================== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.03);
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(50, 52, 142, 0.1);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 220px;
+            background-color: #eaeaea; /* Placeholder de cor carregamento */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cobre o container sem distorcer (Aspect Ratio perfeito!) */
+            transition: transform 0.6s ease;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.05); /* Micro-interação de zoom na imagem */
+        }
+
+        /* Overlay gradiente sobre a imagem para dar cara premium */
+        .service-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 100%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-image::after {
+            opacity: 1;
+        }
+
+        .service-content {
+            padding: 32px 24px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-content h3 {
+            font-size: 1.25rem;
+            color: var(--brand-blue);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .service-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .service-link {
+            color: var(--brand-green);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .service-link svg {
+            width: 18px;
+            height: 18px;
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-link {
+            color: var(--brand-blue);
+        }
+        
+        .service-card:hover .service-link svg {
+            transform: translateX(4px); /* Animação de seta apontando */
+        }
+
+        /* ==========================================================================
+           4. SEÇÃO DE PRODUTOS & BANNER CTA
+           ========================================================================== */
+        .products-showcase {
+            background: linear-gradient(135deg, var(--brand-blue) 0%, #1e1f56 100%);
+            color: white;
+            border-radius: 24px;
+            padding: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 40px auto;
+            box-shadow: var(--shadow-md);
+        }
+
+        .products-text-block {
+            max-width: 500px;
+        }
+
+        .products-text-block h2 {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+
+        .products-text-block p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 32px;
+        }
+
+        /* Botão Premium */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--brand-green);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 168, 89, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--brand-green-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 168, 89, 0.5);
+        }
+
+        /* Responsividade Básica */
+        @media (max-width: 768px) {
+            .products-showcase {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 24px;
+            }
+            .section-header h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==============================================
+         MOCKUP DA NOVA SEÇÃO DE SERVIÇOS (REDUZINDO ESPAÇO)
+         ============================================== -->
+    <section id="servicos">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos Serviços</h2>
+                <p>Especialistas em energia ininterrupta. Oferecemos soluções completas para garantir o funcionamento do seu negócio.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <article class="service-card">
+                    <div class="service-image">
+                        <!-- Imagem do Unsplash como Placeholder visualmente atraente -->
+                        <img src="https://images.unsplash.com/photo-1590058763566-a32b260029b9?q=80&w=800&auto=format&fit=crop" alt="Vendas e Instalações de Geradores">
+                    </div>
+                    <div class="service-content">
+                        <h3>Vendas e Instalações</h3>
+                        <p>Venda e Instalação de Grupos Geradores novos e usados, manuais e automáticos, silenciados e abertos para indústrias e empresas.</p>
+                        <a href="#" class="service-link">
+                            Saiba mais 
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=800&auto=format&fit=crop" alt="Manutenção de Geradores">
+                    </div>
+                    <div class="service-content">
+                        <h3>Manutenção Predial e Corretiva</h3>
+                        <p>Realizamos Manutenção Preventiva e Corretiva garantindo a máxima eficiência e segurança dos seus equipamentos de energia.</p>
+                        <a href="#" class="service-link">
+                            Saiba mais 
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1565515261895-3eb7658c4953?q=80&w=800&auto=format&fit=crop" alt="Restauração e Reparos">
+                    </div>
+                    <div class="service-content">
+                        <h3>Locação e Restauração</h3>
+                        <p>Locação de Grupos de Geradores de 30 a 500 Kva silenciado e automático para Eventos, Fazendas e Operações de grande porte.</p>
+                        <a href="#" class="service-link">
+                            Saiba mais 
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         MOCKUP DA NOVA SEÇÃO DE PRODUTOS E BOTÃO PRINCIPAL
+         ============================================== -->
+    <section style="padding-top: 0;">
+        <div class="container">
+            <div class="products-showcase">
+                <div class="products-text-block">
+                    <h2>Nossos Produtos</h2>
+                    <p>Temos os mais variados tipos de Grupos Geradores, Alternadores, e Motores de acordo com sua necessidade de energia.</p>
+                    <a href="#" class="btn-primary">Explorar Catálogo de Produtos</a>
+                </div>
+                <!-- Gráfico ou Imagem de Destaque -->
+                <div style="flex-shrink: 0; display:none;">
+                    <!-- Espaço para um gerador em PNG sem fundo, simulando a peça flutuando -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
