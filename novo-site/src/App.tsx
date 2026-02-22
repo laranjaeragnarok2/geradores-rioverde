@@ -72,19 +72,17 @@ function App() {
             <div className="section-header">
               <span className="tagline">Nossas Especialidades</span>
               <h2>Performance de <span className="text-gradient">Ponta a Ponta</span></h2>
-              <p>Projetos desenvolvidos sob medida para Condomínios, Obras, Supermercados, Hospitais e Indôstrias.</p>
+              <p>Projetos desenvolvidos sob medida para Condomínios, Obras, Supermercados, Hospitais e Indústrias.</p>
             </div>
 
             <div className="services-grid">
               {/* Card 1 */}
               <article className="service-card">
-                <div className="service-icon-wrapper">
-                  <Power size={28} />
-                </div>
                 <div className="service-image">
-                  <img src="https://images.unsplash.com/photo-1590058763566-a32b260029b9?q=80&w=800&auto=format&fit=crop" alt="Vendas de Geradores" />
+                  <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=800&auto=format&fit=crop" alt="Vendas de Geradores" />
                 </div>
                 <div className="service-content">
+                  <div className="service-icon-inline"><Power size={24} /></div>
                   <h3>Vendas e Projetos</h3>
                   <p>Equipamentos novos e usados, manuais e automáticos, silenciados e abertos. A potência ideal adaptada à necessidade exata da sua operação e indústria.</p>
                   <a href="#" className="service-link">
@@ -95,13 +93,11 @@ function App() {
 
               {/* Card 2 */}
               <article className="service-card">
-                <div className="service-icon-wrapper">
-                  <Wrench size={28} />
-                </div>
                 <div className="service-image">
-                  <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=800&auto=format&fit=crop" alt="Manutenção GRV" />
+                  <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop" alt="Manutenção GRV" />
                 </div>
                 <div className="service-content">
+                  <div className="service-icon-inline"><Wrench size={24} /></div>
                   <h3>Manutenção e Reparos</h3>
                   <p>Manutenção preventiva, fabricação de quadros de automação (Q.T.A) e rebobinamento de motores para máxima segurança contra interrupções.</p>
                   <a href="#" className="service-link">
@@ -112,13 +108,11 @@ function App() {
 
               {/* Card 3 */}
               <article className="service-card">
-                <div className="service-icon-wrapper">
-                  <Zap size={28} />
-                </div>
                 <div className="service-image">
-                  <img src="https://images.unsplash.com/photo-1565515261895-3eb7658c4953?q=80&w=800&auto=format&fit=crop" alt="Locação Grupos Geradores" />
+                  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=800&auto=format&fit=crop" alt="Locação Grupos Geradores" />
                 </div>
                 <div className="service-content">
+                  <div className="service-icon-inline"><Zap size={24} /></div>
                   <h3>Locação de Alta Tensão</h3>
                   <p>Frota diversificada com geradores silenciados de 30 a 500 Kva ideais para seu evento, formatura ou agronegócio não pararem.</p>
                   <a href="#" className="service-link">
