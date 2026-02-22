@@ -47,8 +47,8 @@ function App() {
           <div className="container">
             <div className="hero-content">
               <span className="tagline">Energia Ininterrupta</span>
-              <h1>Potência e Segurança para o seu <span className="text-gradient">Negócio.</span></h1>
-              <p>Soluções completas em grupos geradores. Venda, locação e manutenção especializada com a referência GRV de qualidade industrial.</p>
+              <h1>Sua energia com <span className="text-gradient">nossa força.</span></h1>
+              <p>Garantimos que você nunca fique sem energia. Soluções de alta performance e segurança em geradores para o Agronegócio, Eventos, Indústrias e Condomínios.</p>
 
               <div className="hero-actions" style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
                 <a href="#servicos" className="btn btn-primary">
@@ -86,7 +86,7 @@ function App() {
                 </div>
                 <div className="service-content">
                   <h3>Vendas e Projetos</h3>
-                  <p>Equipamentos variados (novos e usados), silenciados ou abertos, entregando a capacidade ideal para sua operação contínua.</p>
+                  <p>Equipamentos novos e usados, manuais e automáticos, silenciados e abertos. A potência ideal adaptada à necessidade exata da sua operação e indústria.</p>
                   <a href="#" className="service-link">
                     Fazer Cotação <ArrowRight size={18} />
                   </a>
@@ -103,7 +103,7 @@ function App() {
                 </div>
                 <div className="service-content">
                   <h3>Manutenção e Reparos</h3>
-                  <p>Atuação preventiva e corretiva com laboratório próprio de última geração. Garantimos a vida útil máxima do seu grupo gerador.</p>
+                  <p>Manutenção preventiva, fabricação de quadros de automação (Q.T.A) e rebobinamento de motores para máxima segurança contra interrupções.</p>
                   <a href="#" className="service-link">
                     Acione o Suporte <ArrowRight size={18} />
                   </a>
@@ -120,7 +120,7 @@ function App() {
                 </div>
                 <div className="service-content">
                   <h3>Locação de Alta Tensão</h3>
-                  <p>Frota diversificada com geradores silenciados (30KVA a 500KVA) focados em eventos, formaturas, agronegócio e obras urgentes.</p>
+                  <p>Frota diversificada com geradores silenciados de 30 a 500 Kva ideais para seu evento, formatura ou agronegócio não pararem.</p>
                   <a href="#" className="service-link">
                     Ver Catálogo <ArrowRight size={18} />
                   </a>
@@ -138,8 +138,8 @@ function App() {
               <div className="sphere-2"></div>
 
               <div className="cta-content">
-                <h2>Gostou das Soluções? Traga energia de verdade!</h2>
-                <p style={{ fontSize: '1.25rem', marginBottom: '32px', opacity: 0.9 }}>Fale com um dos nossos engenheiros agora mesmo e traga mais potência e segurança para sua empresa.</p>
+                <h2>O sucesso do seu negócio não pode depender da sorte.</h2>
+                <p style={{ fontSize: '1.25rem', marginBottom: '32px', opacity: 0.9 }}>Sua produção não pode parar. Garanta sua segurança com geradores eficientes e fale direto no WhatsApp com nossa equipe!</p>
                 <a href="#" className="btn btn-secondary" style={{ backgroundColor: 'white', color: '#2B2E83', border: 'none' }}>
                   Iniciar Conversa no WhatsApp <ArrowRight size={20} />
                 </a>
